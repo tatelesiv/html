@@ -1,0 +1,86 @@
+//Convert a string to an array
+function stringToArray(string) {
+  return string.split(" ");
+}
+
+//DNA to RNA Conversion
+function DNAtoRNA(dna) {
+  let rna = "";
+  for (let i = 0; i < dna.length; i++) {
+    let currentChar = dna[i];
+    if (currentChar === "T") {
+      rna += "U";
+    } else {
+      rna += currentChar;
+    }
+  }
+  return rna;
+}
+
+//Find Maximum and Minimum Values of a List
+var min = function (list) {
+  let minValue = list[0];
+  for (let i = 1; i < list.length; i++) {
+    if (list[i] < minValue) {
+      minValue = list[i];
+    }
+  }
+  return minValue;
+};
+
+var max = function (list) {
+  let maxValue = list[0];
+  for (let i = 1; i < list.length; i++) {
+    if (list[i] > maxValue) {
+      maxValue = list[i];
+    }
+  }
+  return maxValue;
+};
+
+//Smallest value of an array
+function min(arr, toReturn) {
+  let minValue = arr[0];
+  let minIndex = 0;
+  for (i = 1; i < arr.length; i++) {
+    if (arr[i] < minValue) {
+      minValue = arr[i];
+      minIndex = i;
+    }
+  }
+  if (toReturn === "value") {
+    return minValue;
+  } else {
+    return minIndex;
+  }
+}
+
+//A wolf in sheep's clothing
+function warnTheSheep(queue) {
+  let reversedQueue = queue.reverse();
+  let wolfIndex = reversedQueue.indexOf("wolf");
+  let warnSheep = wolfIndex;
+  if (wolfIndex === 0) {
+    return "Pls go away and stop eating my sheep";
+  } else {
+    return (
+      "Oi! Sheep number " + warnSheep + "! You are about to be eaten by a wolf!"
+    );
+  }
+}
+
+//Beginner - Lost Without a Map
+function maps(x) {
+  return x.map((value) => value * 2);
+}
+
+//Find the first non-consecutive number
+function firstNonConsecutive(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    if (arr[i] !== arr[i - 1] + 1) {
+      return arr[i];
+    }
+  }
+
+  return null;
+}
